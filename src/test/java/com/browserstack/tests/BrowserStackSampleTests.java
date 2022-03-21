@@ -3,6 +3,8 @@ package com.browserstack.tests;
 import java.net.URL;
 import java.util.List;
 import java.net.MalformedURLException;
+
+import com.browserstack.config.Credentials;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -18,12 +20,16 @@ public class BrowserStackSampleTests {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
+        String user = Credentials.config.user();
+        String key = Credentials.config.key();
+        String app = Credentials.config.app();
+
         // Set your access credentials
-        caps.setCapability("browserstack.user", "lexamenrf_ZANKXG");
-        caps.setCapability("browserstack.key", "12m6SQ5ShDkCpCjS8euQ");
+        caps.setCapability("browserstack.user", user);
+        caps.setCapability("browserstack.key", key);
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        caps.setCapability("app", app);
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
