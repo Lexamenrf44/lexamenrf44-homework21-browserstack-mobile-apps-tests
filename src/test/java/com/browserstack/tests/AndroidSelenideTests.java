@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
 @Tag("selenide")
-public class AndroidSelenideTests extends TestBase{
+public class AndroidSelenideTests extends TestBase {
     @Test
     void searchTest() {
-        step("Click skip", () -> {
+        step("Click skip button", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
         });
         step("Type search", () -> {
